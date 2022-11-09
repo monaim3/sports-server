@@ -47,7 +47,7 @@ async function run() {
                 }
             }
 
-            const cursor = reviewCollection.find(query);
+            const cursor = reviewCollection.find(query).sort({date:-1});
             const review = await cursor.toArray();
             res.send(review);
         });
